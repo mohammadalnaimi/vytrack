@@ -1,7 +1,7 @@
-package com.fleet.step_definitions;
+package com.vytrack.step_definitions;
 
-import com.fleet.pages.LoginPage;
-import com.fleet.utilities.ConfigurationReader;
+import com.vytrack.pages.LoginPage;
+import com.vytrack.utilities.ConfigurationReader;
 import io.cucumber.java.en.Given;
 public class LoginStepDefs {
 

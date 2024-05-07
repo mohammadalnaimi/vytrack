@@ -1,4 +1,4 @@
-package com.fleet.runners;
+package com.vytrack.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"
         },
         features = "src/test/resources/features",
-        glue = "com/fleet/step_definitions",
+        glue = "com/vytrack/step_definitions",
         dryRun = true,
         tags = "@wip",
         publish = true //generating a report with public link
