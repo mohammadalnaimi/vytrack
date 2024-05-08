@@ -27,7 +27,9 @@ public class CalendarEvent_StepDef_PM {
     public void the_user_hovers_over(String string) {
 
 
-        actions.moveToElement(calendarEventPagePm.activitiesButton).perform();
+
+        actions.moveToElement(calendarEventPagePm.activitiesButton).pause(3000);
+       // actions.moveToElement(calendarEventPagePm.activitiesButton).click();
 
 
     }
@@ -60,7 +62,7 @@ public class CalendarEvent_StepDef_PM {
         calendarEventPagePm.repeatEveryNumber.click();
 
     }
-    @Then("the user deletes {string}")
+    @Then("the user deletes 1")
     public void the_user_deletes(String string) {
 
         calendarEventPagePm.repeatEveryNumber.sendKeys("");

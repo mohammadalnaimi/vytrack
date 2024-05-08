@@ -2,7 +2,7 @@ Feature: Recurring Calendar Event Verification
 
   Background: User is already in the log in page
     Given the user is on the login page
-    Given the user logged in with username as "User1" and password as "UserUser123"
+    Given the user logged in with username as "storemanager51" and password as "UserUser123"
 
     Scenario: As a user, I want to create a recurring (repetitive) calendar event.
       Given the user is logged in on homepage
