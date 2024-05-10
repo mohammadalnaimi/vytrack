@@ -3,6 +3,7 @@ package com.vytrack.step_definitions;
 import com.vytrack.pages.US007_VehicleGenerate_Page_MA;
 import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -17,8 +18,9 @@ public class US007_VehicleGenerate_StepDef_MA {
     @When("user hover over  Fleet")
     public void userHoverOverFleet() {
 
-        Actions actions = new Actions(Driver.getDriver());
-        actions.moveToElement(vehicleGeneratePageMa.fleetDropDown).perform();
+       // Actions actions = new Actions(Driver.getDriver());
+       // actions.moveToElement(vehicleGeneratePageMa.fleetDropDown).perform();
+        BrowserUtils.hover(vehicleGeneratePageMa.fleetDropDown);
     }
 
     @When("user click on Vehicles")
@@ -46,4 +48,33 @@ public class US007_VehicleGenerate_StepDef_MA {
     }
 
 
+    @Then("verify all checkboxes are selected")
+    public void verifyAllCheckboxesAreSelected() {
+
+
+
+        for (WebElement eachCheckBox : vehicleGeneratePageMa.listOfCheckBox) {
+            Assert.assertTrue(eachCheckBox.isSelected());
+        }
+
+    }
+
+    @And("user click on the first checkbox")
+    public void userClickOnTheFirstCheckbox() {
+        vehicleGeneratePageMa.mainCheckBox.click();
+    }
+
+
+
+    @Then("verify the checkbox user clicked on is selected")
+    public void verifyTheCheckboxUserClickedOnIsSelected() {
+        Assert.assertTrue(vehicleGeneratePageMa.fourthCheckBox.isSelected());
+    }
+
+
+
+    @And("user click on the forth checkbox")
+    public void userClickOnTheForthCheckbox() {
+        vehicleGeneratePageMa.fourthCheckBox.click();
+    }
 }
