@@ -1,12 +1,44 @@
+@US007
 Feature: Select Vehicles
 
   Background: User is already in the log in page
     Given the user is on the login page
-    Given the user logged in with username as "salesmanager101" and password as "UserUser123"
 
 
-    Scenario: Verify that once the users launch on the Vehicles page, the users can see all the checkboxes
-    as unchecked.
+  Scenario Outline: Verify that once the users launch on the Vehicles page, the users can see all the checkboxes
+  as unchecked.
+    Given the user logged in as "<userType>"
+    When user hover over  Fleet
+    And user click on Vehicles
+    Then Verify user see all the checkboxes as unchecked
+
+    Examples:
+      | userType      |
+      | Store Manager |
+      | Sales Manager |
+
+
+    Scenario Outline: Verify that users can check the first checkbox to select all the cars
+      Given the user logged in as "<userType>"
       When user hover over  Fleet
       And user click on Vehicles
-      Then Verify user see all the checkboxes as unchecked
+      And user click on the first checkbox
+      Then verify all checkboxes are selected
+
+      Examples:
+        | userType      |
+        | Store Manager |
+        | Sales Manager |
+
+
+      Scenario Outline: Verify that users can select any car
+        Given the user logged in as "<userType>"
+        When user hover over  Fleet
+        And user click on Vehicles
+        And user click on the forth checkbox
+        Then verify the checkbox user clicked on is selected
+
+        Examples:
+          | userType      |
+          | Store Manager |
+          | Sales Manager |
