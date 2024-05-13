@@ -21,6 +21,7 @@ public class US007_VehicleGenerate_StepDef_MA {
        // Actions actions = new Actions(Driver.getDriver());
        // actions.moveToElement(vehicleGeneratePageMa.fleetDropDown).perform();
         BrowserUtils.hover(vehicleGeneratePageMa.fleetDropDown);
+
     }
 
     @When("user click on Vehicles")
@@ -66,6 +67,7 @@ public class US007_VehicleGenerate_StepDef_MA {
 
 
 
+  /*
     @Then("verify the checkbox user clicked on is selected")
     public void verifyTheCheckboxUserClickedOnIsSelected() {
         Assert.assertTrue(vehicleGeneratePageMa.fourthCheckBox.isSelected());
@@ -75,6 +77,18 @@ public class US007_VehicleGenerate_StepDef_MA {
 
     @And("user click on the forth checkbox")
     public void userClickOnTheForthCheckbox() {
+
         vehicleGeneratePageMa.fourthCheckBox.click();
+
+    }
+   */
+
+    @And("user select any car")
+    public void userSelectAnyCar() {
+        BrowserUtils.waitForTitleContains("All - Car - Entities");
+        BrowserUtils.selectAnyCheckBox(vehicleGeneratePageMa.listOfCheckBox);
+        boolean expectedSelection = true;
+        boolean actualSelection = BrowserUtils.isSelectedCheckBox(vehicleGeneratePageMa.listOfCheckBox);
+        Assert.assertEquals(expectedSelection,actualSelection);
     }
 }

@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+import java.util.Random;
 
 public class US007_VehicleGenerate_Page_MA extends BasePage{
 
@@ -24,6 +25,7 @@ public class US007_VehicleGenerate_Page_MA extends BasePage{
 
 @FindBy(xpath = "//tbody[@class='grid-body']//tr[4]//input")
     public WebElement fourthCheckBox;
+
 
 
 }
