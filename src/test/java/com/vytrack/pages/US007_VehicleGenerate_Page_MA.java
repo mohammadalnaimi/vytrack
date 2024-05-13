@@ -19,5 +19,11 @@ public class US007_VehicleGenerate_Page_MA extends BasePage{
 @FindBy(xpath = "(//button[@data-toggle='dropdown'])//input")
     public WebElement mainCheckBox;
 
+@FindBy(xpath = "//td[text()='silver']//preceding-sibling::td[13]//input")
+    public WebElement checkBoxHasSilverValue;
+
+@FindBy(xpath = "//tbody[@class='grid-body']//tr[4]//input")
+    public WebElement fourthCheckBox;
+
 
 }

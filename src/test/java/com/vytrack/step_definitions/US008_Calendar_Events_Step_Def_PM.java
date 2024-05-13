@@ -21,7 +21,10 @@ public class US008_Calendar_Events_Step_Def_PM {
     }
     @When("User click on  calendar events")
     public void user_click_on_calendar_events() {
+
         BrowserUtils.waitForClickablility(us008CalendarEventPagePm.calendarEventsBtn,2);
+
+       // BrowserUtils.waitForClickablility(us008CalendarEventPagePm.calendarEventsBtn,5);
 
         us008CalendarEventPagePm.calendarEventsBtn.click();
 
