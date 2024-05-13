@@ -11,7 +11,7 @@ public class US008_Calendar_Event_Page_PM extends BasePage{
     @FindBy (linkText = "Calendar Events")
     public WebElement calendarEventsBtn;
 
-
+//
     @FindBy (xpath = "//a[@title='Create Calendar event']")
     public WebElement createCalendarEvent;
 
@@ -22,7 +22,7 @@ public class US008_Calendar_Event_Page_PM extends BasePage{
 
 
 
-    @FindBy (xpath = "(//input[@class='recurrence-subview-control__number'])[1]")
+    @FindBy (xpath = "(//input[@value='1'])[2]")
     public WebElement repeatEveryBox;
 
     @FindBy (xpath = "(//input[@class='recurrence-subview-control__number error'])[1]")
@@ -31,8 +31,16 @@ public class US008_Calendar_Event_Page_PM extends BasePage{
     @FindBy(xpath = "(//span[.='This value should not be blank.'])[4]")
     public WebElement errorText;
 
+ 
+    @FindBy (xpath = "(//input[@class='recurrence-subview-control__number'])[1]")
+    public WebElement repeatEveryBox1;
+
+    @FindBy ( xpath =  "//span[@class='validation-failed']")
+    public WebElement errorMessage;
+
     @FindBy (xpath = "//span[@class='validation-failed']")
     public WebElement invalidValue;
+
 
 
 }

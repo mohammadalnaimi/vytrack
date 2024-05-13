@@ -18,3 +18,21 @@ Feature: Users should be able to login
       | Store manager |
       | Sales Manager |
       | Driver        |
+
+
+  @AC2
+   Scenario Outline: Verify that users see the error message “This value should not be blank.”
+      Given the user logged in as "<userType>"
+      When User is on Vytrack home page and hoverover  to activities
+      And User click on  calendar events
+      And User click on  create calendar event
+      And user click on the Repeat check box
+      And user click inside repeat every and delete number 1
+      Then user sees the error message This value should not be blank
+
+
+      Examples:
+        | userType      |
+        | Store manager |
+        | Sales Manager |
+        | Driver        |
