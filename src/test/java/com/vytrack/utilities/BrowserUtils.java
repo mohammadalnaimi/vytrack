@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 public class BrowserUtils {
@@ -482,6 +483,26 @@ public class BrowserUtils {
      */
     public static void waitForPresenceOfElement(By by, long time) {
         new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(time)).until(ExpectedConditions.presenceOfElementLocated(by));
+    }
+
+    public static void selectAnyCheckBox(List<WebElement> list){
+
+        Random random = new Random();
+        int randomNumber = random.nextInt((list.size()-1)+1);
+        list.get(randomNumber).click();
+
+
+    }
+    public static boolean isSelectedCheckBox(List<WebElement> list){
+
+        boolean isSelected = true;
+        for (WebElement each : list) {
+            if (each.isSelected()){
+                return isSelected;
+            }
+
+        }
+        return !isSelected;
     }
 
 
