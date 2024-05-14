@@ -36,7 +36,7 @@ public class US009_RepeatEvery_StepDef_AR {
     @When("User clicks on the Repeat check box")
     public void user_clicks_on_the_repeat_check_box() {
 
-        us008CalendarEventPagePm.repeatBtn.click();
+        BrowserUtils.clickWithWait(By.xpath("//input[@data-name='recurrence-repeat']"), 4);
     }
 
     @When("User enters {string} in Repeat Every input box")
@@ -48,11 +48,25 @@ public class US009_RepeatEvery_StepDef_AR {
 
     }
 
-    @Then("User sees the error message")
-    public void user_sees_the_error_message() {
 
-        BrowserUtils.verifyElementDisplayed(us008CalendarEventPagePm.invalidValue);
 
+    @Then("User sees the error message for {string}")
+    public void userSeesTheErrorMessageFor(String value) {
+
+        String actualErrorMsg = us008CalendarEventPagePm.invalidValue.getText();
+
+        String expectedErrorMsg = "The value have not to be less than 1.";
+
+        Assert.assertEquals(actualErrorMsg, expectedErrorMsg);
     }
 
+    @Then("User sees the error message {string}")
+    public void userSeesTheErrorMessage(String value) {
+
+        String actualErrorMsg = us008CalendarEventPagePm.invalidValue.getText();
+
+        String expectedErrorMsg2 = "The value have not to be more than 99.";
+
+        Assert.assertEquals(actualErrorMsg, expectedErrorMsg2);
+    }
 }

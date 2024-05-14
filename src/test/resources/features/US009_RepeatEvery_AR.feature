@@ -12,7 +12,7 @@ Feature: Repeat Every input box range
     And User clicks on create calendar event
     And User clicks on the Repeat check box
     And User enters "0" in Repeat Every input box
-    Then User sees the error message
+    Then User sees the error message for "0"
 
 
     Examples:
@@ -29,7 +29,7 @@ Feature: Repeat Every input box range
     And User clicks on create calendar event
     And User clicks on the Repeat check box
     And User enters "100" in Repeat Every input box
-    Then User sees the error message
+    Then User sees the error message "100"
 
 
     Examples:
