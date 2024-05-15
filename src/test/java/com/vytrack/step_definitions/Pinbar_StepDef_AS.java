@@ -18,33 +18,31 @@ public class Pinbar_StepDef_AS {
         pinbarPageAs.spaceLink.click();
 
     }
-    @Then("the user should see How To Use Pinbar")
-    public void theUserShouldSeeHowToUsePinbar() {
+    @Then("the user should be able to see title on home page as {string}")
+    public void theUserShouldBeAbleToSeeTitleOnHomePageAs(String expectedText) {
 
         BrowserUtils.waitFor(2);
-        String expectedText = "How To Use Pinbar";
+     //   String expectedText = "How To Use Pinbar";
+        String actualText = pinbarPageAs.howToUsePinbarTitle.getText().trim();
 
-        Assert.assertEquals(expectedText, pinbarPageAs.howToUsePinbarTitle);
+        Assert.assertEquals(expectedText, actualText);
 
     }
 
-    @And("the user should see Use the pin icon on the right top corner of page to create fast access link in the pinbar.")
-    public void theUserShouldSeeUseThePinIconOnTheRightTopCornerOfPageToCreateFastAccessLinkInThePinbar() {
+    @And("the user should be able to see explanation on home page as {string}")
+    public void theUserShouldBeAbleToSeeExplanationOnHomePageAs(String expectedText){
 
         BrowserUtils.waitFor(2);
-        String expectedText = "Use pin icon on the right top corner of page to create fast access link in the pinbar.";
+        //String expectedText = "Use pin icon on the right top corner of page to create fast access link in the pinbar.";
+        String actualText = pinbarPageAs.howToUsePinbarText.getText().trim();
 
-        Assert.assertEquals(expectedText, pinbarPageAs.howToUsePinbarText);
+        Assert.assertEquals(expectedText, actualText);
 
-
-    }
-
-    @Then("the user should see image from source {string}")
-    public void the_user_should_see_image_from_source(String string) {
 
     }
 
-    }
+
+}
 
 
 

@@ -11,7 +11,7 @@ public class Pinbar_Page_AS extends BasePage{
     @FindBy(xpath ="//a[.='Learn how to use this space']")
     public WebElement spaceLink;
 
-    @FindBy (xpath = "//h3[.='How To Use Pinbar']")
+    @FindBy(xpath = "//div[@class='container-fluid']//h3")
     public WebElement howToUsePinbarTitle;
 
     @FindBy (linkText = "Use pin icon on the right top corner of page to create fast access link in the pinbar.")
