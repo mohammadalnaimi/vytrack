@@ -2,6 +2,8 @@ package com.vytrack.step_definitions;
 
 import com.vytrack.pages.Pinbar_Page_AS;
 import com.vytrack.utilities.BrowserUtils;
+import com.vytrack.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
@@ -16,29 +18,33 @@ public class Pinbar_StepDef_AS {
         pinbarPageAs.spaceLink.click();
 
     }
-    @Then("the user should see {string}")
-    public void the_user_should_see() {
+    @Then("the user should see How To Use Pinbar")
+    public void theUserShouldSeeHowToUsePinbar() {
 
         BrowserUtils.waitFor(2);
         String expectedText = "How To Use Pinbar";
-        String actualText = pinbarPageAs.howToUsePinbarTitle.getText();
 
-        Assert.assertEquals(expectedText, actualText);
+        Assert.assertEquals(expectedText, pinbarPageAs.howToUsePinbarTitle);
 
     }
-    @Then("the user should see \"Use the pin icon on the right top corner of page to create fast access link in the pinbar.”")
-    public void the_user_should_see_use_the_pin_icon_on_the_right_top_corner_of_page_to_create_fast_access_link_in_the_pinbar() {
+
+    @And("the user should see Use the pin icon on the right top corner of page to create fast access link in the pinbar.")
+    public void theUserShouldSeeUseThePinIconOnTheRightTopCornerOfPageToCreateFastAccessLinkInThePinbar() {
 
         BrowserUtils.waitFor(2);
         String expectedText = "Use pin icon on the right top corner of page to create fast access link in the pinbar.";
-        String actualText = pinbarPageAs.howToUsePinbarText.getText();
 
-        Assert.assertEquals(expectedText, actualText);
+        Assert.assertEquals(expectedText, pinbarPageAs.howToUsePinbarText);
+
 
     }
+
     @Then("the user should see image from source {string}")
     public void the_user_should_see_image_from_source(String string) {
 
     }
 
-}
+    }
+
+
+
