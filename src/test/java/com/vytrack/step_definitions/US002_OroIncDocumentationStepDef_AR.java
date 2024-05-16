@@ -1,6 +1,7 @@
 package com.vytrack.step_definitions;
 
 import com.vytrack.pages.US002_OroIncDocumentationPage_AR;
+import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -20,7 +21,11 @@ public class US002_OroIncDocumentationStepDef_AR {
     @Then("User sees the new tab opens with OroInc Documentation website")
     public void user_sees_the_new_tab_opens_with_oro_inc_documentation_website() {
 
-        Set<String> allWindowHandles = Driver.getDriver().getWindowHandles();
+        BrowserUtils.waitFor(3);
+
+        BrowserUtils.switchWindowAndVerify("oroinc", "Oro");
+
+       /* Set<String> allWindowHandles = Driver.getDriver().getWindowHandles();
 
         for(String each: allWindowHandles){
             Driver.getDriver().switchTo().window(each);
@@ -29,7 +34,9 @@ public class US002_OroIncDocumentationStepDef_AR {
             if(Driver.getDriver().getCurrentUrl().contains("oroinc")){
                 break;
             }
-        }
+            }
+        */
+
 
         String expectedURL = "https://doc.oroinc.com/";
         String actualURL = Driver.getDriver().getCurrentUrl();
