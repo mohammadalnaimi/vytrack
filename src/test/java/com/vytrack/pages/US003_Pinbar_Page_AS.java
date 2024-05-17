@@ -1,12 +1,9 @@
 package com.vytrack.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import javax.xml.xpath.XPath;
-
-public class Pinbar_Page_AS extends BasePage{
+public class US003_Pinbar_Page_AS extends BasePage{
 
     @FindBy(xpath ="//a[.='Learn how to use this space']")
     public WebElement spaceLink;
@@ -14,9 +11,11 @@ public class Pinbar_Page_AS extends BasePage{
     @FindBy(xpath = "//div[@class='container-fluid']//h3")
     public WebElement howToUsePinbarTitle;
 
-    @FindBy (linkText = "Use pin icon on the right top corner of page to create fast access link in the pinbar.")
+    @FindBy (xpath = "//p['Use pin icon on the right top corner of page to create fast access link in the pinbar.'][1]")
     public WebElement howToUsePinbarText;
 
+    @FindBy (xpath = "//img['/bundles/oronavigation/images/pinbar-location.jpg']")
+    public WebElement howToUsePinbarImage;
 
 
 
