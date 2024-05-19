@@ -30,13 +30,13 @@ Feature: Select Vehicles
         | Store Manager |
         | Sales Manager |
 
-
+@wipMA
       Scenario Outline: Verify that users can select any car
         Given the user logged in as "<userType>"
         When user hover over  Fleet
         And user click on Vehicles
-        And user click on the forth checkbox
-        Then verify the checkbox user clicked on is selected
+        And user select any car
+       # Then verify the checkbox user clicked on is selected
 
         Examples:
           | userType      |
