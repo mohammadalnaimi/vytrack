@@ -34,6 +34,7 @@ public class US007_VehicleGenerate_StepDef_MA {
     @Then("Verify user see all the checkboxes as unchecked")
     public void verify_user_see_all_the_checkboxes_as_unchecked() {
 
+        BrowserUtils.waitForTitleContains("All - Car - Entities - System - Car - Entities - System");
         boolean isUnchecked = true;
         for (WebElement each : vehicleGeneratePageMa.listOfCheckBox) {
             if (each.isSelected()){
@@ -54,7 +55,7 @@ public class US007_VehicleGenerate_StepDef_MA {
     public void verifyAllCheckboxesAreSelected() {
 
 
-
+        BrowserUtils.waitForTitleContains("All - Car - Entities - System - Car - Entities - System");
         for (WebElement eachCheckBox : vehicleGeneratePageMa.listOfCheckBox) {
             Assert.assertTrue(eachCheckBox.isSelected());
         }
@@ -63,6 +64,7 @@ public class US007_VehicleGenerate_StepDef_MA {
 
     @And("user click on the first checkbox")
     public void userClickOnTheFirstCheckbox() {
+        BrowserUtils.waitForTitleContains("All - Car - Entities - System - Car - Entities - System");
         vehicleGeneratePageMa.mainCheckBox.click();
     }
 
