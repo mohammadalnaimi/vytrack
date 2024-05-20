@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.bytebuddy.asm.Advice;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 public class US008_Calendar_Events_Step_Def_PM {
 
@@ -22,7 +23,7 @@ public class US008_Calendar_Events_Step_Def_PM {
     @When("User click on  calendar events")
     public void user_click_on_calendar_events() {
 
-        BrowserUtils.waitForClickablility(us008CalendarEventPagePm.calendarEventsBtn,2);
+        BrowserUtils.clickWithWait(By.xpath("//a[@title='Create Calendar event']"),3);
 
        // BrowserUtils.waitForClickablility(us008CalendarEventPagePm.calendarEventsBtn,5);
 
